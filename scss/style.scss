@@ -1,0 +1,14 @@
+// OM NAMASIVAYA
+@import 'variables';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $pramiry-color;
+}
+
+@import 'navBar'
