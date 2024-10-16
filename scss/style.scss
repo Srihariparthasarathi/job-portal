@@ -5,10 +5,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body{
     background-color: $pramiry-color;
 }
 
-@import 'navBar'
+@import 'navBar';
+@import 'loginUpForm'

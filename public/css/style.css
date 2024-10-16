@@ -2,10 +2,137 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: #091057;
+  background-color: #F6F1F1;
+}
+
+header {
+  background-color: #19A7CE;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+}
+header .left, header .right {
+  display: flex;
+  gap: 1rem;
+}
+header .left ul, header .right ul {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+header .left ul li, header .right ul li {
+  margin: 0px 1rem;
+  list-style: none;
+  display: flex;
+}
+header .left ul a, header .right ul a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease-in;
+  transform: scale(1);
+}
+header .left ul a:hover, header .right ul a:hover {
+  color: #F6F1F1;
+  transform: scale(0.9);
+}
+header form {
+  display: flex;
+}
+header input {
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: 0px;
+}
+header button {
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: 0px;
+  color: #000000;
+  transition: 0.3s ease-in;
+  margin-left: -30px;
+}
+header button:hover {
+  color: #19A7CE;
+  font-weight: 900;
+}
+
+#reg-main-container {
+  width: 100vw;
+  height: 100vh;
+}
+#reg-main-container .form-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+#reg-main-container .com-form {
+  width: 30%;
+  background-color: #19A7CE;
+  color: #F6F1F1;
+  padding: 2rem 0.5rem;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px #146C94;
+}
+#reg-main-container .com-form h2, #reg-main-container .com-form p {
+  text-align: center;
+}
+#reg-main-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+#reg-main-container form div {
+  width: 100%;
+}
+#reg-main-container form div li, #reg-main-container form div span {
+  padding: 0.25rem 0 0 0.25rem;
+  color: #000000;
+  list-style: none;
+  font-size: 12px;
+}
+#reg-main-container input {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 0px;
+}
+#reg-main-container button {
+  width: 100px;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 0px;
+  font-weight: 500;
+  background-color: #000000;
+  color: #F6F1F1;
+  transition: 0.3s ease-in;
+}
+#reg-main-container button:hover {
+  background-color: #F6F1F1;
+  color: #000000;
+  font-weight: 900;
+}
+#reg-main-container a {
+  color: #000000;
+  font-weight: 600;
+  transition: 0.2s ease-in;
+}
+#reg-main-container a:hover {
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,46 @@
+<div id="reg-main-container">
+  <div class="form-container">
+    <!-- Login Form -->
+    <div id="loginForm" class="com-form">
+      <h2>Login Form</h2>
+
+      <form action="/login" method="post">
+        <div>
+          <input type="email" name="email" placeholder="enter your email" />
+          <% if (errors) { %>
+          <ul>
+            <% let foundError = false; %> <% errors.forEach((err) => { %> <% if
+            (!foundError && err.path === "email") { %>
+            <li><%= err.msg %></li>
+            <% foundError = true; %> <% } %> <% }) %>
+          </ul>
+          <% } %>
+        </div>
+
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="enter strong password"
+          />
+          <% if (errors) { %>
+          <ul>
+            <% let foundError = false; %> <% errors.forEach((err) => { %> <% if
+            (!foundError && err.path === "password") { %>
+            <li><%= err.msg %></li>
+            <% foundError = true; %> <% } %> <% }) %>
+          </ul>
+
+          <% errors.forEach((err) => { %> <% if (!foundError && err.invalid) {
+          %>
+          <span><%= err.invalid %></span>
+          <% } %> <% }) %> <% } %>
+        </div>
+
+        <button type="submit">SignIn</button>
+      </form>
+
+      <p>Don't have a accont ? <a href="/register">Sign-Up</a> here.</p>
+    </div>
+  </div>
+</div>
