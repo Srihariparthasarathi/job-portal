@@ -20,6 +20,7 @@ export default class UsersModel{
         const newUser =  new UsersModel(newUserId, userObj.username, userObj.email, userObj.password);
 
         usersList.push(newUser)
+        return newUser;
     }
 
     static checkUser(userObj){

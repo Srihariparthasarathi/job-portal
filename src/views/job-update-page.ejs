@@ -1,0 +1,107 @@
+<!-- OM NAMASIVAYA -->
+<div id="post-job-main-container">
+  <div class="post-job-container">
+    <div class="post-job-form">
+      <% if(job){%>
+      <form id="updateForm" data-job-id="<%= job.id %>">
+        <div id="com-name-div" class="horizontal-div">
+          <label for="companyname">Company Name</label>
+          <input
+            type="text"
+            name="companyname"
+            value="<%= job.companyname %>"
+            id="companyname"
+          />
+        </div>
+
+        <div class="form-div">
+          <select name="jobCatagory" id="jobCatagory">
+            <option value="<%= job.jobCatagory %>" selected>
+              <%= job.jobCatagory %>
+            </option>
+          </select>
+
+          <select name="jobDesigination" id="jobDesigination">
+            <option value="<%= job.jobDesigination %>" selected>
+              <%= job.jobDesigination %>
+            </option>
+          </select>
+        </div>
+
+        <div class="horizontal-div">
+          <div>
+            <label for="location">Location</label>
+            <input
+              type="text"
+              name="location"
+              value="<%= job.location %>"
+              id="location"
+            />
+          </div>
+
+          <div>
+            <label for="opening">Opening</label>
+            <input
+              type="number"
+              id="opening"
+              name="opennings"
+              min="1"
+              max="100"
+              value="<%= job.opennings %>"
+            />
+          </div>
+        </div>
+
+        <div class="horizontal-div">
+          <div class="salary-div">
+            <label for="salary-range">salary range(LPA)</label>
+            <div id="salary-ran-container">
+              <label for="min-salary">Min</label>
+              <label for="max-salary">Max</label>
+              <input
+                type="number"
+                id="min-salary"
+                name="min"
+                min="1"
+                max="500"
+                value="<%= job.salary.split('-')[0] %>"
+              />
+
+              <input
+                type="number"
+                id="max-salary"
+                name="max"
+                min="1"
+                max="500"
+                value="<%= job.salary.split('-')[1] %>"
+              />
+            </div>
+          </div>
+
+          <div id="apply-by">
+            <label for="applyBy">Apply Before</label>
+            <input
+              type="date"
+              min="<%= new Date().toISOString().slice(0, 10) %>"
+              name="applyBy"
+              value="<%= new Date(job.applyBy).toISOString().slice(0, 10)%>"
+            />
+          </div>
+        </div>
+
+        <div class="horizontal-div">
+          <label for="Skills">require skills</label>
+          <textarea name="skills" id="skills" rows="3">
+          <%= job.skills.join(', ') %>
+        </textarea
+          >
+        </div>
+
+        <div id="err-container"></div>
+
+        <button type="submit">Update job</button>
+      </form>
+      <%} %>
+    </div>
+  </div>
+</div>

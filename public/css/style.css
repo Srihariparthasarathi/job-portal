@@ -9,6 +9,65 @@ body {
   background-color: #F6F1F1;
 }
 
+#dashboard-main {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  padding: 60px 20px;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+#dashboard-main #controller-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  margin-left: 1rem;
+  /* Typing effect */
+}
+#dashboard-main #controller-container h2 {
+  color: #EB8317;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(23, end) infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+#dashboard-main #controller-container #controller {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
+}
+#dashboard-main #controller-container a {
+  text-decoration: none;
+}
+#dashboard-main #controller-container .con-item {
+  padding: 0.5rem 0;
+  width: 170px;
+  font-weight: 600;
+  background-color: #146C94;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #146C94;
+  transition: 0.3s ease-in;
+  color: #F6F1F1;
+  text-decoration: none;
+}
+#dashboard-main #controller-container .con-item:hover {
+  background-color: #F6F1F1;
+  color: #000000;
+  transform: scale(1.05);
+  cursor: pointer;
+  color: #000000;
+  font-weight: 700;
+}
+
 header {
   background-color: #19A7CE;
   padding: 0.5rem;
@@ -133,6 +192,370 @@ header button:hover {
 }
 #reg-main-container a:hover {
   font-size: 15px;
+}
+
+#all-jobs-main-container {
+  padding-top: 50px;
+}
+#all-jobs-main-container #jobs-container {
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  column-gap: 2rem;
+}
+#all-jobs-main-container .jobs-items {
+  background-color: #F6F1F1;
+  border: 2px solid #146C94;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#all-jobs-main-container .jobs-items div {
+  margin-bottom: 1.5rem;
+}
+#all-jobs-main-container .jobs-items h2 {
+  color: red;
+  margin-bottom: 0.25rem;
+}
+#all-jobs-main-container .jobs-items span {
+  color: #146C94;
+  font-weight: 700;
+}
+#all-jobs-main-container .jobs-items .location, #all-jobs-main-container .jobs-items .salary-range {
+  display: flex;
+  gap: 0.25rem;
+}
+#all-jobs-main-container .jobs-items .location i, #all-jobs-main-container .jobs-items .salary-range i {
+  color: #000000;
+}
+#all-jobs-main-container .jobs-items .salary-range p {
+  color: #EB8317;
+  font-weight: 500;
+}
+#all-jobs-main-container .jobs-items .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+#all-jobs-main-container .jobs-items .skills p {
+  padding: 0.25rem 0.5rem;
+  color: #19A7CE;
+  font-weight: 500;
+  border: 1.5px solid #19A7CE;
+  border-radius: 0.25rem;
+}
+#all-jobs-main-container .jobs-items a {
+  color: #F6F1F1;
+  text-decoration: none;
+  padding: 0.5rem;
+  background-color: #19A7CE;
+  width: 90%;
+  align-self: center;
+  text-align: center;
+  border: 1px solid #19A7CE;
+  border-radius: 0.25rem;
+}
+#all-jobs-main-container .jobs-items a:hover {
+  color: #19A7CE;
+  background-color: #000000;
+}
+#all-jobs-main-container #filter {
+  display: flex;
+  padding: 0.5rem 2rem;
+  gap: 1rem;
+  background-color: #146C94;
+  margin-top: -0.25rem;
+}
+
+#post-job-main-container {
+  width: 100vw;
+  height: 100vh;
+}
+#post-job-main-container .post-job-container {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+#post-job-main-container .post-job-form {
+  background-color: #F6F1F1;
+  border: 2px solid #146C94;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#post-job-main-container .post-job-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#post-job-main-container .post-job-form form input, #post-job-main-container .post-job-form form label, #post-job-main-container .post-job-form form select {
+  padding: 0.5rem 0.5rem;
+}
+#post-job-main-container .post-job-form form .horizontal-div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: #19A7CE;
+  font-weight: 700;
+  align-items: center;
+  column-gap: 1rem;
+}
+#post-job-main-container .post-job-form form #com-name-div {
+  background-color: #146C94;
+  color: #F6F1F1;
+}
+#post-job-main-container .post-job-form form .salary-div {
+  text-align: center;
+  background-color: #146C94;
+  padding: 0.25rem;
+  color: #F6F1F1;
+  border-radius: 0.25rem;
+}
+#post-job-main-container .post-job-form form #salary-ran-container {
+  text-align: center;
+  margin-left: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.25rem;
+}
+#post-job-main-container .post-job-form form #salary-ran-container label, #post-job-main-container .post-job-form form #salary-ran-container input {
+  padding: 0.2rem;
+}
+#post-job-main-container .post-job-form form .form-div {
+  display: flex;
+  gap: 0.5rem;
+}
+#post-job-main-container .post-job-form form #apply-by {
+  display: grid;
+  text-align: center;
+}
+#post-job-main-container .post-job-form form textarea {
+  padding: 0.25rem;
+}
+#post-job-main-container .post-job-form form textarea::placeholder {
+  color: #888;
+  font-style: italic;
+}
+#post-job-main-container .post-job-form form button {
+  color: #F6F1F1;
+  padding: 0.5rem;
+  background-color: #146C94;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+  border: 1px solid #146C94;
+  border-radius: 0.25rem;
+  font-size: large;
+  font-weight: 700;
+}
+#post-job-main-container .post-job-form form button:hover {
+  color: #19A7CE;
+  background-color: #000000;
+}
+#post-job-main-container .post-job-form form span {
+  color: red;
+  font-size: 12px;
+}
+
+#details-main-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  position: relative;
+}
+#details-main-container #inner-container {
+  background-color: #F6F1F1;
+  width: 70%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 2px solid #146C94;
+}
+#details-main-container .heading-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#details-main-container .heading-div div {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+#details-main-container .heading-div i {
+  color: #146C94;
+}
+#details-main-container .heading-div span {
+  color: #146C94;
+  font-weight: 500;
+}
+#details-main-container .heading-div #applicant-count i {
+  box-shadow: 2px 2px 4px #146C94;
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+#details-main-container .heading-div #applicant-count i:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+#details-main-container h1 {
+  color: red;
+}
+#details-main-container p {
+  font-weight: 700;
+  color: #19A7CE;
+}
+#details-main-container span {
+  font-weight: 600;
+  color: #000000;
+}
+#details-main-container #salary-range {
+  color: red;
+}
+#details-main-container #skill-Container .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+#details-main-container #skill-Container .skills p {
+  padding: 0.25rem 0.5rem;
+  color: #19A7CE;
+  font-weight: 500;
+  border: 1.5px solid #19A7CE;
+  border-radius: 0.25rem;
+}
+#details-main-container #apply-job {
+  margin-top: 2rem;
+  color: #F6F1F1;
+  text-decoration: none;
+  padding: 0.75rem;
+  background-color: #19A7CE;
+  width: 70%;
+  align-self: center;
+  text-align: center;
+  border: 1px solid #19A7CE;
+  border-radius: 0.25rem;
+  font-weight: 900;
+}
+#details-main-container #apply-job:hover {
+  color: #19A7CE;
+  background-color: #000000;
+}
+#details-main-container #application-form {
+  display: none;
+  background-color: #19A7CE;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px #19A7CE;
+}
+#details-main-container #application-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+#details-main-container #application-form form input, #details-main-container #application-form form button {
+  padding: 0.5rem;
+}
+#details-main-container #application-form form button {
+  color: #F6F1F1;
+  text-decoration: none;
+  padding: 0.75rem;
+  background-color: #EB8317;
+  width: 70%;
+  align-self: center;
+  text-align: center;
+  border: 1px solid #19A7CE;
+  border-radius: 0.25rem;
+  font-weight: 900;
+}
+#details-main-container #application-form form button:hover {
+  color: #19A7CE;
+  background-color: #000000;
+}
+#details-main-container #control {
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+#details-main-container #control #update-job {
+  color: #EB8317;
+}
+#details-main-container #control #update-job:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+#details-main-container #control #delete-job {
+  color: red;
+}
+#details-main-container #control #delete-job:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+#details-main-container #control #update-job, #details-main-container #control #delete-job {
+  box-shadow: 2px 2px 4px #146C94;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+}
+#details-main-container #application-list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  background-color: #19A7CE;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: none;
+}
+#details-main-container #application-list .inner-container {
+  height: 100%;
+  overflow: auto;
+}
+#details-main-container #application-list .inner-container::-webkit-scrollbar {
+  display: none;
+}
+#details-main-container #application-list table, #details-main-container #application-list th, #details-main-container #application-list td {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.1rem;
+  text-wrap: wrap;
+}
+#details-main-container #application-list table {
+  border-spacing: 0.1rem;
+}
+#details-main-container #application-list th {
+  background-color: #146C94;
+}
+#details-main-container #application-list td {
+  background-color: #F6F1F1;
+}
+#details-main-container #application-list td a {
+  color: red;
+}
+#details-main-container .close {
+  font-size: 1.25rem;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background-color: rgb(223, 221, 221);
+  padding: 0.1rem 0.2rem;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+#details-main-container .close:hover {
+  cursor: pointer;
+  transform: scale(0.8);
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,33 @@
+<!-- OM NAMASIVAYA -->
+<div id="all-jobs-main-container">
+  <div id="filter">
+    <h3>filter</h3>
+    <select name="jobCatagory" id="jobCatagory">
+      <option value="" disabled selected hidden>Select Job Catagory</option>
+    </select>
+
+    <select name="jobDesigination" id="jobDesigination">
+      <option value="" disabled selected hidden>Select Job Desigination</option>
+    </select>
+
+    <input
+      type="text"
+      name="location"
+      placeholder="enter Company location"
+      id="location"
+    />
+
+    <p>salary range</p>
+    <input
+      type="number"
+      id="min-salary"
+      name="min"
+      min="1"
+      max="500"
+      value="1"
+    />
+    <p>to</p>
+    <input type="number" id="max-salary" name="max" min="1" max="500" />
+  </div>
+  <div id="jobs-container"></div>
+</div>

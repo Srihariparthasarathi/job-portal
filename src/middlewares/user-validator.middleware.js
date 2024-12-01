@@ -3,7 +3,6 @@ import UsersModel from '../models/users.model.js';
 
 export const registerValidator = async (req, res, next)=>{
     /** to validate the information before registration */
-
     // rules    
     const rules = [body("username")
         .escape()
@@ -29,7 +28,6 @@ export const registerValidator = async (req, res, next)=>{
 
     // validation
     const errors = validationResult(req);
-    console.log(errors.array());
     if(!errors.isEmpty()) return res.render('register-page', {errors: errors.array()});
     next(); 
 }
@@ -37,7 +35,6 @@ export const registerValidator = async (req, res, next)=>{
 
 export const loginValidator = async (req, res, next)=>{
     /** to validate the information before login */
-
     // rules    
     const rules = [
         body("email")

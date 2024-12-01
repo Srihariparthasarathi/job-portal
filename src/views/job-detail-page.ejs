@@ -1,0 +1,102 @@
+<!-- OM NAMASIVAYA -->
+
+<div id="details-main-container">
+  <div id="inner-container">
+    <div class="heading-div">
+      <div>
+        <h1><%=job.companyname%></h1>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          <span><%=job.location%></span>
+        </p>
+      </div>
+      <div>
+        <%if(locals.user){%>
+        <p id="applicant-count">
+          <i class="fa-solid fa-people-group"></i>
+          <span><%=job.applications.length%></span>
+        </p>
+        <%} %>
+      </div>
+    </div>
+    <%if(locals.user){%>
+    <div id="control" data-job-id="<%=job.id%>">
+      <div id="update-job">
+        <a href="/update-jobs/<%=job.id%>"
+          ><i class="fa-solid fa-pen-to-square"></i
+        ></a>
+      </div>
+      <div id="delete-job"><i class="fa-solid fa-trash"></i></div>
+    </div>
+    <%} %>
+
+    <p>Job Catagory: <span> <%=job.jobCatagory%></span></p>
+    <p>Job Desgination: <span><%=job.jobDesigination%></span></p>
+    <p>Salary range: <span id="salary-range"><%=job.salary%> Lpa</span></p>
+    <p>Job Catagory: <span> <%=job.jobCatagory%></span></p>
+    <p>Opening: <span><%=job.opennings%></span></p>
+    <div id="skill-Container">
+      <h3>skills</h3>
+      <div class="skills">
+        <% if(job.skills.length > 0){%> <% job.skills.forEach((skill) => {%>
+        <p><%=skill%></p>
+        <%})%> <%}%>
+      </div>
+    </div>
+
+    <div id="apply-job">apply Job</div>
+  </div>
+  <div id="application-form">
+    <div id="close-app-form" class="close">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+    <form id="apply-form">
+      <input type="text" name="jobid" value="<%=job.id %>" hidden />
+      <input type="text" name="name" placeholder="enter your name" />
+      <input type="email" name="email" placeholder="enter you email" />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="enter contact number"
+        pattern="[0-9]{10}"
+      />
+      <input type="file" name="cv" min="1" max="1" accept=".pdf, .doc, .docx" />
+      <button type="submit">apply</button>
+      <div id="err-container"></div>
+    </form>
+  </div>
+
+  <div id="application-list">
+    <div id="close-app-list" class="close">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+    <div class="inner-container">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>resume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% applicantList = job.applications %> <% let count = 0 %> <%
+          applicantList.forEach((applicant) => { %>
+          <tr>
+            <td><%= count + 1 %></td>
+            <td><%= applicant.name %></td>
+            <td><%= applicant.email %></td>
+            <td>
+              <a href="<%= applicant.filePath %>" target="_blank">
+                <i class="fa-solid fa-file"></i>
+              </a>
+            </td>
+          </tr>
+          <% count++ %> <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

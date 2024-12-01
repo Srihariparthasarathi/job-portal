@@ -12,5 +12,9 @@ body{
     background-color: $pramiry-color;
 }
 
+@import 'dashboard';
 @import 'navBar';
-@import 'loginUpForm'
+@import 'loginUpForm';
+@import 'allJobs';
+@import 'postJob';
+@import 'details';

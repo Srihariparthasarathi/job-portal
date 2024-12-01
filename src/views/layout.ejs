@@ -26,8 +26,10 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#">Job</a></li>
-            <li><a href="#">Post Job</a></li>
+            <li><a href="/job-page">Job's</a></li>
+            <% if(locals.user) {%>
+            <li><a href="/post-job">Post Job</a></li>
+            <%} %>
           </ul>
         </nav>
       </div>
@@ -42,14 +44,18 @@
         </div>
         <nav>
           <ul>
+            <% if(locals.user){%>
+            <li><a href="/logout">SignOut</a></li>
+            <%} else{%>
             <li><a href="/register">SignUp</a></li>
             <li><a href="/login">SignIn</a></li>
-            <li><a href="/">SignOut</a></li>
+            <%}%>
           </ul>
         </nav>
       </div>
     </header>
     <main><%-body%></main>
     <footer></footer>
+    <script src="/javascript/script.js"></script>
   </body>
 </html>
